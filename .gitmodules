@@ -1,6 +1,6 @@
 [submodule "JUCE"]
 	path = JUCE
-	url = ./JUCE
+	url = https://github.com/WeAreROLI/JUCE.git
 [submodule "MclTextEditor"]
 	path = MclTextEditor
-	url = ./MclTextEditor
+	url = https://github.com/jzrake/MclTextEditor.git
