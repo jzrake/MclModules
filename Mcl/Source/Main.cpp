@@ -9,7 +9,7 @@
 */
 
 #include "JuceHeader.h"
-#include "../../MclTextEditor/TextEditor.hpp"
+#include "../../MclTextEditor/TextEditor-v1.hpp"
 
 
 
@@ -70,8 +70,9 @@ public:
         {
             setUsingNativeTitleBar (true);
 
-            auto editor = new mcl::TextEditor;
+            auto editor = new mclv1::TextEditor;
             editor->setSize (600, 600);
+            editor->setText (File ("/Users/jzrake/Work/MclModules/MclTextEditor/TextEditor.cpp").loadFileAsString());
 
             setResizable (true, false);
             setContentOwned (editor, true);

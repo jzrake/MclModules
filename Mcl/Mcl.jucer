@@ -4,8 +4,12 @@
   <MAINGROUP id="xTgKcv" name="Mcl">
     <GROUP id="{0F3814D5-5C04-7CED-9FD2-39D9699E44D7}" name="Source">
       <GROUP id="{4655A073-CC9C-07B1-A509-75E11D739FA7}" name="MclTextEditor">
-        <FILE id="bNmVjw" name="TextEditor.cpp" compile="1" resource="0" file="../MclTextEditor/TextEditor.cpp"/>
-        <FILE id="eu5QTI" name="TextEditor.hpp" compile="0" resource="0" file="../MclTextEditor/TextEditor.hpp"/>
+        <FILE id="bNmVjw" name="TextEditor-v1.cpp" compile="1" resource="0"
+              file="../MclTextEditor/TextEditor-v1.cpp"/>
+        <FILE id="eu5QTI" name="TextEditor-v1.hpp" compile="0" resource="0"
+              file="../MclTextEditor/TextEditor-v1.hpp"/>
+        <FILE id="YUOYor" name="TextEditor.cpp" compile="1" resource="0" file="../MclTextEditor/TextEditor.cpp"/>
+        <FILE id="jfrvta" name="TextEditor.hpp" compile="0" resource="0" file="../MclTextEditor/TextEditor.hpp"/>
       </GROUP>
       <FILE id="D6TUpf" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
