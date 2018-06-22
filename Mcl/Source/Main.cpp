@@ -9,7 +9,7 @@
 */
 
 #include "JuceHeader.h"
-#include "../../MclTextEditor/TextEditor-v1.hpp"
+#include "../../MclTextEditor/TextEditor.hpp"
 
 
 
@@ -31,11 +31,13 @@ public:
         // This method is where you should put your application's initialisation code..
 
         mainWindow.reset (new MainWindow (getApplicationName()));
+        // context.attachTo (*mainWindow);
     }
 
     void shutdown() override
     {
         // Add your application's shutdown code here..
+        // context.detach();
 
         mainWindow = nullptr; // (deletes our window)
     }
@@ -70,9 +72,9 @@ public:
         {
             setUsingNativeTitleBar (true);
 
-            auto editor = new mclv1::TextEditor;
+            auto editor = new mcl::TextEditor;
             editor->setSize (600, 600);
-            editor->setText (File ("/Users/jzrake/Work/MclModules/MclTextEditor/TextEditor.cpp").loadFileAsString());
+            editor->setText (URL ("https://raw.githubusercontent.com/jzrake/MclTextEditor/master/TextEditor.cpp").readEntireTextStream());
 
             setResizable (true, false);
             setContentOwned (editor, true);
@@ -102,6 +104,7 @@ public:
 
 private:
     std::unique_ptr<MainWindow> mainWindow;
+    OpenGLContext context;
 };
 
 //==============================================================================
