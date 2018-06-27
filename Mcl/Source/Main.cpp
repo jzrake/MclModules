@@ -30,6 +30,12 @@ public:
     {
         // This method is where you should put your application's initialisation code..
 
+        // lookAndFeel.setColourScheme (LookAndFeel_V4::getMidnightColourScheme());
+        // lookAndFeel.setColourScheme (LookAndFeel_V4::getDarkColourScheme());
+        lookAndFeel.setColourScheme (LookAndFeel_V4::getGreyColourScheme());
+        // lookAndFeel.setColourScheme (LookAndFeel_V4::getLightColourScheme());
+
+        Desktop::getInstance().setDefaultLookAndFeel (&lookAndFeel);
         mainWindow.reset (new MainWindow (getApplicationName()));
         // context.attachTo (*mainWindow);
     }
@@ -74,7 +80,14 @@ public:
 
             auto editor = new mcl::TextEditor;
             editor->setSize (600, 600);
-            editor->setText (URL ("https://raw.githubusercontent.com/jzrake/MclTextEditor/master/TextEditor.cpp").readEntireTextStream());
+            // editor->setText (URL ("https://raw.githubusercontent.com/jzrake/MclTextEditor/master/TextEditor.cpp").readEntireTextStream());
+
+            editor->setColour (CaretComponent::caretColourId, Colours::blue);
+            editor->setColour (CodeEditorComponent::backgroundColourId, Colours::white);
+            editor->setColour (CodeEditorComponent::defaultTextColourId, Colours::black);
+            editor->setColour (CodeEditorComponent::highlightColourId, Colours::blue.withAlpha (0.3f));
+            editor->setColour (CodeEditorComponent::lineNumberBackgroundId, Colours::whitesmoke);
+            editor->setColour (CodeEditorComponent::lineNumberTextId, Colours::grey);
 
             setResizable (true, false);
             setContentOwned (editor, true);
@@ -104,6 +117,7 @@ public:
 
 private:
     std::unique_ptr<MainWindow> mainWindow;
+    LookAndFeel_V4 lookAndFeel;
     OpenGLContext context;
 };
 
